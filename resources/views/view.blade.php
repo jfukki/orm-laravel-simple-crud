@@ -7,6 +7,7 @@
 <div class="container mt-5 text-center">
     <h2>    LARAVEL | Eloquent CRUD</h2>
     <hr>
+    <a href="{{ route('add') }}" class="btn btn-sm btn-success">Add New Entry</a>
 </div>
 
 <div class="container mt-5">
@@ -32,11 +33,11 @@
                             <th scope="row">{{$student->name}}</th>
                             <td>{{$student->city}}</td>
                             <td>{{$student->address}}</td>
-                            <td scope="col">Degree-Program</td>
+                            <td scope="col">{{$student->program}}</td>
                             <td>
                                 <a href="{{ route('delete', $student->id ) }}" class="btn btn-sm btn-danger"> Delete </a>
-                                <a href="#" class="btn btn-sm btn-warning"> Edit </a>
-                                <a href="#" class="btn btn-sm btn-success"> Detail </a>
+                                <a href="{{ route('edit', $student->id) }}" class="btn btn-sm btn-warning"> Edit </a>
+                                <a href="{{ route('detail', $student->id)}}" class="btn btn-sm btn-success"> Detail </a>
 
 
                             </td>
