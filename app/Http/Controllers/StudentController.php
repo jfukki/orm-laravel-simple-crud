@@ -13,12 +13,12 @@ class StudentController extends Controller
     {
         $students = Student::all();     
         return view('view', ['students'=> $students]);
-    }
+    } //table view
 
     public function add()
     {
         return view('add');
-    }
+    }//form view
 
     public function store(Request $req)
     {
@@ -31,12 +31,12 @@ class StudentController extends Controller
         $student->save();
          
         return back();
-    }
+    } //insert
  
 
     public function delete($id)
     {
         Student::find($id)->delete();
         return back();
-    }
+    }//delete
 }
